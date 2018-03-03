@@ -1,4 +1,3 @@
-# this one is like your scripts with ARGV
 # We use def for 'define' and give the function a name
 # We tell it we want *args, which is similar to ARGV but for functions
 #We need to start tabbing in order to make sure the contents are contained within the function. We unpack the arguments like we did before in the first line. We print the arguments out.
