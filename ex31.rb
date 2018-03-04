@@ -1,4 +1,4 @@
-puts "You enter a dark room with two doors. Do you go through door #1 or #2?"
+puts "You enter a dark room with two doors. Do you go through door #1, #2 or #3?"
 
 print "> "
 door = $stdin.gets.chomp
@@ -29,11 +29,26 @@ elsif door == "2"
   insanity = $stdin.gets.chomp
 
   if insanity == "1" || insanity == "2"
-    puts "Your body survives powered by a mind of jello. Good job!"
+    puts "Your body survives powered by a mind of jello. Good job! \n You can save your brain by pressing a button, but which?"
+    puts "1. green"
+    puts "2. red"
+
+    print "> "
+    button = $stdin.gets.chomp
+
+    if button == "1"
+      puts "Well done! Your brain is now intact again. Though it isn't your brain. It's Trump's. Well, you did choose a red button. Your own fault."
+    elsif button == "2"
+      puts "No, silly. Green buttons never do anything. They're just there as a placebo. You jab the buttons at road crossings and on the doors of tubes, don't you?"
+    else
+      puts "Well not reading instructions was the best way to go this time. Your brain is now intact."
+    end
   else
-    puts "The insanity rots your eyes into a pool of much. Good job!"
+    puts "The insanity rots your eyes into a pool of mush. Good job!"
   end
 
+elsif door == "3"
+  puts "You're now stuck in a parallel universe, filled with doors to open. One will get you home... maybe. Better start opening."
 else
   puts "You stumble around and fall on a knife and die. Good job!"
 end
