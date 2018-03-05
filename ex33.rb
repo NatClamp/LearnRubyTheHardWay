@@ -80,3 +80,5 @@ def number_list(x)
 end
 
 number_list(5)
+
+puts "Wahoo look at me go!"
