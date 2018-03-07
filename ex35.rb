@@ -30,18 +30,40 @@ def gold_room
 #    dead("Man, learn to type a number.")
 #  end
 
-  if choice =~ ^[0-9]
+# This kind of works, but the same happens as above.
+#  if choice.to_i.is_a? Numeric
+#    how_much = choice.to_i
+#  else
+#    dead("Man learn how to type a number.")
+#  end
+
+# This block converts the user answer to an integer, like before, and then back to a string. If this string is the same as the original string, that means it was a numebr that was entered (because if it was something like 'A', it would have been converted to 0 with to_i, and then it wouldn't have been equal to the original string.)!
+  if choice.to_i.to_s == choice
     how_much = choice.to_i
-    print how_much
   else
     dead("Man learn how to type a number.")
   end
+
+
+
 #Another if statement - if the user answer is less than 50, something is printed and then the script is exited. Otherwise, the dead function is called.
   if how_much < 50
     puts " Nice, you're not greedy, you win!"
     exit(0)
   else
-    dead("You greedy bastard!")
+    puts "Are you sure?"
+    puts "Yes or No"
+    puts "> "
+    sure = $stdin.gets.chomp
+
+    if sure == "Yes"
+      dead("Ya greedy bastard! I'll 'av ya'!")
+    elsif sure == "No"
+      puts "Correct answer, put a bit back and then you are dismissed. You survive another day - but I'm watching you."
+      exit(0)
+    else
+      dead("You're really bad at decisions. You die of ethically induced guilt mixed with a tinge of greed.")
+    end
   end
 end
 
