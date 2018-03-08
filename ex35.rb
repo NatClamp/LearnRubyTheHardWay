@@ -5,6 +5,7 @@ def gold_room
   print "> "
   choice = $stdin.gets.chomp
 
+=begin
 # If statement - if the user answer includes a 0 or a 1, then the answer is converted to an integer and assigned to the how_much variable. Else, the dead function is called.
 #  if choice.include?("0") || choice.include?("1")
 #    how_much = choice.to_i
@@ -36,6 +37,7 @@ def gold_room
 #  else
 #    dead("Man learn how to type a number.")
 #  end
+=end
 
 # This block converts the user answer to an integer, like before, and then back to a string. If this string is the same as the original string, that means it was a numebr that was entered (because if it was something like 'A', it would have been converted to 0 with to_i, and then it wouldn't have been equal to the original string.)!
   if choice.to_i.to_s == choice
@@ -43,8 +45,6 @@ def gold_room
   else
     dead("Man learn how to type a number.")
   end
-
-
 
 #Another if statement - if the user answer is less than 50, something is printed and then the script is exited. Otherwise, the dead function is called.
   if how_much < 50
